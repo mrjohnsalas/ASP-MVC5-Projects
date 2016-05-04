@@ -111,7 +111,14 @@ namespace Z_Market.Controllers
         {
             DocumentType documentType = db.DocumentTypes.Find(id);
             db.DocumentTypes.Remove(documentType);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception exception)
+            {
+
+            }
             return RedirectToAction("Index");
         }
 

@@ -39,7 +39,7 @@ namespace Z_Market.Controllers
         // GET: Employees/Create
         public ActionResult Create()
         {
-            ViewBag.DocumentTypeId = new SelectList(db.DocumentTypes, "DocumentTypeId", "Description");
+            ViewBag.DocumentTypeId = new SelectList(db.DocumentTypes.OrderBy(d => d.Description), "DocumentTypeId", "Description");
             return View();
         }
 
