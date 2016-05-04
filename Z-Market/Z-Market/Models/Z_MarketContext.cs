@@ -20,6 +20,10 @@ namespace Z_Market.Models
         }
 
         public System.Data.Entity.DbSet<Z_Market.Models.Product> Products { get; set; }
+
+        public System.Data.Entity.DbSet<Z_Market.Models.DocumentType> DocumentTypes { get; set; }
+
+        public System.Data.Entity.DbSet<Z_Market.Models.Employee> Employees { get; set; }
     
     }
 }
