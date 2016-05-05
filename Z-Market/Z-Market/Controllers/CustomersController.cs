@@ -39,7 +39,9 @@ namespace Z_Market.Controllers
         // GET: Customers/Create
         public ActionResult Create()
         {
-            ViewBag.DocumentTypeId = new SelectList(db.DocumentTypes.OrderBy(d => d.Description), "DocumentTypeId", "Description");
+            var documentTypeList = db.DocumentTypes.ToList();
+            documentTypeList.Add(new DocumentType {DocumentTypeId = 0, Description = "[Seleccione un tipo de documento]"});
+            ViewBag.DocumentTypeId = new SelectList(documentTypeList.OrderBy(d => d.Description), "DocumentTypeId", "Description");
             return View();
         }
 
