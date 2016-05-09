@@ -15,12 +15,14 @@ namespace Z_Market.Controllers
         private Z_MarketContext db = new Z_MarketContext();
 
         // GET: Products
+        [Authorize(Roles = "View")]
         public ActionResult Index()
         {
             return View(db.Products.ToList());
         }
 
         // GET: Products/Details/5
+        [Authorize(Roles = "View")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +38,7 @@ namespace Z_Market.Controllers
         }
 
         // GET: Products/Create
+        [Authorize(Roles = "Create")]
         public ActionResult Create()
         {
             return View();
@@ -59,6 +62,7 @@ namespace Z_Market.Controllers
         }
 
         // GET: Products/Edit/5
+        [Authorize(Roles = "Edit")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -90,6 +94,7 @@ namespace Z_Market.Controllers
         }
 
         // GET: Products/Delete/5
+        [Authorize(Roles = "Delete")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
