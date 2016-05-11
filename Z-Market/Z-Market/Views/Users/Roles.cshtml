@@ -1,0 +1,33 @@
+﻿@model Z_Market.ModelView.UserView
+@{
+    ViewBag.Title = "Roles";
+}
+
+<h2>Roles for user: @Model.Name</h2>
+
+<p>
+    @Html.ActionLink("Add Role", "AddRole", new { userId = Model.UserId }, new { @class = "btn btn-success" })
+    @Html.ActionLink("Back to list", "Index", new { }, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Roles[0].Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Roles)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { userId = Model.UserId, roleId = item.RoleId }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

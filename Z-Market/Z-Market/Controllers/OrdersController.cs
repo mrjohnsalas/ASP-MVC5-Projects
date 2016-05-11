@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Z_Market.Models;
-using Z_Market.ViewModels;
+using Z_Market.ModelView;
 
 namespace Z_Market.Controllers
 {

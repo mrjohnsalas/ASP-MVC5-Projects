@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Z_Market.Models;
 
-namespace Z_Market.ViewModels
+namespace Z_Market.ModelView
 {
     public class OrderView
     {
